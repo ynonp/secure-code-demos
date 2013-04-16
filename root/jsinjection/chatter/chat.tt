@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat Ultimate</title>
+  <style>
+    .from { font-weight: bold }
+    .from::after { content: ": " }
+  </style>
+</head>
+<body>
+  <h1>Chat Ultimate</h1>
+
+  <div id="container">
+
+  </div>
+
+
+  <script type="text/template" id="p-login" >
+    <p>Welcome to chat. Please insert username below to start</p>
+
+    <form>
+      <label for="nick">Nickname</label>
+      <input id="nick" type="text" />
+      <input type="submit" value="Start Chatting" />
+    </form>
+  </script>
+
+  <script type="text/template" id="p-chat" >
+    <p>Identified as: {{nick}}</p>
+    <p>Other chatters:
+      <span id="chatters-list">
+      </span>
+    </p>
+    <form>
+      <label for="msg"></label>
+      <input id="msg" type="text" />
+      <input type="submit" value="Send!" />
+    </form>
+    <ul>
+    </ul>
+  </script>
+
+  <script type="text/template" id="v-userlist">
+    {{#each chatters}}
+      <span class="chatter">{{this}}, </span>
+    {{/each}}
+  </script>
+
+  <script type="text/template" id="v-msg">
+    <li>
+      <span class="from">{{from}}</span>
+      <span class="msg-text">{{text}}</span>
+    </li>
+  </script>
+
+  <script>
+    var g_socketio_host = '[% socketio_host %]';
+  </script>
+
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.3/handlebars.min.js"></script>
+  <script src="[% socketio_host %]/socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

@@ -13,8 +13,7 @@ __PACKAGE__->config(namespace => '');
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    # Hello World
-    $c->response->body( $c->welcome_message );
+    $c->stash->{template} = 'index.html';
 }
 
 sub default :Path {

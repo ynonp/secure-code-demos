@@ -18,7 +18,7 @@ sub do_login :POST Path Args(0) {
   my $user = $c->request->param('user') or $self->fail($c);
   my $pass = $c->request->param('pass') or $self->fail($c);
 
-  my $db_users_ref = $c->model->dbh->selectrow_hashref(
+  my $db_users_ref = $c->model('MyDB')->dbh->selectrow_hashref(
     "SELECT name, pass FROM users WHERE name='$user'"
   );
 
@@ -41,7 +41,7 @@ sub fail {
 sub debug :Local {
   my ( $self, $c ) = @_;
 
-  my $users_ref = $c->model->dbh->selectall_arrayref(
+  my $users_ref = $c->model('MyDB')->dbh->selectall_arrayref(
     "SELECT name FROM users",
     { Slice => {} }
   );

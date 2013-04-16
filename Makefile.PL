@@ -24,6 +24,10 @@ requires 'Catalyst::Plugin::Session';
 requires 'Catalyst::Plugin::Session::Store::FastMmap';
 requires 'Catalyst::Plugin::Session::State::Cookie';
 
+requires 'Proc::Daemon';
+
+requires 'XML::XPath';
+
 test_requires 'Test::More' => '0.88';
 catalyst;
 
