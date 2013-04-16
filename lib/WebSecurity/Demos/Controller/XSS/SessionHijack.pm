@@ -38,12 +38,11 @@ sub do_Login :POST :Path(login) {
   my ( $self, $c ) = @_;
   my $m = $c->model('XSS::SessionHijack');
 
-  if ( my $user = $m->valid( $c->request->parameters ) ) {
-    $c->session->{user} = $user;
-    $c->response->redirect( $c->uri_for( 'home' ) );
-  } else {
-    $self->login_fail( $c );
-  }
+  my $user = $m->valid ( $c->request->parameters ) or $self->login_fail($c);
+
+  $c->session->{user} = $user->{name};
+
+  $c->response->redirect( $c->uri_for( 'home' ) );
 }
 
 sub do_Sendmsg :POST PathPart('send') Chained('LoginRequired') {

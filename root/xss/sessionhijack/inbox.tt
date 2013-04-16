@@ -2,9 +2,9 @@
 <html>
 <head>
   <title></title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="inbox.css" rel="stylesheet"/>
-  <link href="compose.css" rel="stylesheet" />
+  <link rel="stylesheet" href="[% c.uri_for('/xss/sessionhijack/style.css') %]" />
+  <link href="[% c.uri_for('/xss/sessionhijack/inbox.css') %]" rel="stylesheet"/>
+  <link href="[% c.uri_for('/xss/sessionhijack/compose.css') %]" rel="stylesheet" />
 
 </head>
 <body class="">
@@ -12,7 +12,7 @@
 <section class="container">
   <div class="login">
 
-    <h1>Inbox
+    <h1>Inbox ([% username %])
       <button id="btn-compose" class="css3button">Compose</button>
     </h1>
 

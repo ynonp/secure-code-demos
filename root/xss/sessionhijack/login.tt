@@ -2,7 +2,7 @@
 <html>
 <head>
   <title></title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="[% c.uri_for('/xss/sessionhijack/style.css') %]" />
   <style>
     .error { color: red; }
   </style>

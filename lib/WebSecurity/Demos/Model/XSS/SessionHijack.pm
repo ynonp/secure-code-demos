@@ -44,7 +44,8 @@ sub valid {
 
   return if ! $users{$user} eq $pass;
 
-  return $user;
+  my $remember = $params->{remember_me};
+  return { name => $user, remember_me => $remember };
 }
 
 sub send_msg {
