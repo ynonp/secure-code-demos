@@ -7,9 +7,7 @@ BEGIN { extends 'Catalyst::Controller'; }
 sub index :Path {
   my ( $self, $c ) = @_;
 
-  $c->response->redirect(
-    $c->uri_for('index.html')
-  )
+  $c->response->redirect( $c->uri_for('index.html'))
 }
 
 sub admin :Local {
