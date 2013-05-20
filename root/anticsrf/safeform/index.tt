@@ -1,6 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head><title>Anti CSRF</title></head>
-
-<h1>Anti CSRF Demo</h1>
-[% form %]
