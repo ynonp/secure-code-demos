@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cool Blogs</title>
+  </head>
+
+  <body>
+    <h1>Latest Posts</h1>
+
+    [% FOREACH post IN posts %]
+      <h2>[% post.title %]</h2>
+      <p>[% post.text %]</p>
+      <hr />
+    [% END %]
+  </body>
+</html>

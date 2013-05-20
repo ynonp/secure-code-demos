@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="[% c.uri_for('/xss/sessionhijack/style.css') %]" />
+  <link href="[% c.uri_for('/xss/sessionhijack/inbox.css') %]" rel="stylesheet"/>
+  <link href="[% c.uri_for('/xss/sessionhijack/compose.css') %]" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<section class="container">
+  <div class="login">
+
+    <h1>Inbox ([% username %])
+      <button id="btn-compose" class="css3button">Compose</button>
+    </h1>
+
+
+    <table class="table">
+      <tr>
+        <th>From</th>
+        <th>Title</th>
+      </tr>
+      [% FOREACH msg IN inbox %]
+      <tr>
+        <td>[% msg.from %]</td>
+        <td>[% msg.title %]</td>
+      </tr>
+      [% END %]
+    </table>
+  </div>
+
+</section>
+
+<div class="overlay"></div>
+<form action="send" class="contact" >
+  <fieldset class="contact-inner">
+    <p class="contact-input">
+      <input type="text" name="name" readonly="READONLY" value="[% username %]">
+    </p>
+
+    <p class="contact-input">
+      <label for="select" class="select">
+        <select name="subject" id="select">
+          <option value="" selected>Send to...</option>
+          [% FOREACH u IN users %]
+          <option value="[% u %]">[% u %]</option>
+          [% END %]
+        </select>
+      </label>
+    </p>
+
+    <p class="contact-input">
+      <textarea name="message" placeholder="Your Message..."></textarea>
+    </p>
+
+    <p class="contact-submit">
+      <input type="submit" value="Send Message">
+    </p>
+  </fieldset>
+</form>
+
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="inbox.js"></script>
+</body>
+</html>
