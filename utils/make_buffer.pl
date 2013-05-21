@@ -5,15 +5,13 @@ use strict;
 use warnings;
 use POSIX qw/ceil/;
 
-my $USAGE = "$0 <pad_length> <byte_as_hex_string> ... ";
+my $USAGE = "$0 <byte_as_hex_string> ... ";
 
-my $length = shift or die $USAGE;
+@ARGV > 0 or die $USAGE;
 
-print "0" x ( $length + 8 );
-
-foreach my $h_byte (reverse @ARGV) {
+foreach my $h_byte (@ARGV) {
   my $parsed = parse_byte_string( $h_byte );
-  print pack( "H8" , $parsed );
+  print pack( "H16" , $parsed );
 }
 
 sub parse_byte_string {
