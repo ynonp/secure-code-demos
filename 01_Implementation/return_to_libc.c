@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
+#include <string.h>
 
 int memory_error()
 {
@@ -12,9 +13,13 @@ int memory_error()
 
 int main()
 {
-  printf("exit_ptr [%llx]\n", exit );
+  char *path = (char *)malloc(10);
+  strcpy(path, "/bin/sh");
 
-  memory_error();
+  printf("exit_ptr [%llx]\n", exit );
+  printf("system_ptr [%llx]\n", system );
+
+  system(path);
 
   printf("--- THE END ---\n");
 }
