@@ -4,6 +4,10 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+sub describe {
+  "Use XPath Injection to gain information"
+}
+
 sub index :Path :Args(0) {
   my ( $self, $c ) = @_;
 

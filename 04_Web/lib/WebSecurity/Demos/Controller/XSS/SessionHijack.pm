@@ -4,6 +4,10 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+sub describe {
+  "Steal sessions with XSS"
+}
+
 sub LoginRequired :Chained('/')  PathPrefix CaptureArgs(0) {
   my ( $self, $c ) = @_;
 

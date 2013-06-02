@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Security Examples Gallery</title>
+
+<link rel="stylesheet" href="static/foundation/css/foundation.min.css" />
+<style>
+  body {
+    background: url(static/grey_wash_wall.png);
+  }
+
+  h1 {
+    padding-top:60px;
+    color: #fff;
+    font-weight: normal;
+  }
+
+  table {
+    border: 1px solid #888;
+    box-shadow: 0px 0px 0px 5px #ccc;
+    width:100%;
+  }
+
+  table tr:hover {
+    background: #70c9cd;
+  }
+</style>
+</head>
+
+<body>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Web Application Security Examples Gallery</h1>
+    <table>
+      <thead>
+        <tr>
+          <th width="200">Example Name</th>
+          <th>Description</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+      [% FOREACH item IN toc %]
+      <tr>
+        <td><a href="[% item.uri %]">[% item.name %]</a></td>
+        <td>[% item.description %]</td>
+        <td><a href="[% item.source %]">[% item.source %]</a></td>
+      </tr>
+      [% END %]
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

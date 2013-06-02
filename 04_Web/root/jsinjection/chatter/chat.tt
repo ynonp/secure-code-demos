@@ -60,6 +60,6 @@
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.3/handlebars.min.js"></script>
   <script src="[% socketio_host %]/socket.io/socket.io.js"></script>
-  <script src="chat.js"></script>
+  <script src="chatter/chat.js"></script>
 </body>
 </html>

@@ -4,6 +4,10 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+sub describe {
+  "Some cookies are broken"
+}
+
 sub index :Path {
   my ( $self, $c ) = @_;
 

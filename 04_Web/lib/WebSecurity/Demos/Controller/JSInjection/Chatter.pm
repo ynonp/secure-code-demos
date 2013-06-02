@@ -4,6 +4,10 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+sub describe {
+  "Manipulate chat for fun and profit"
+}
+
 sub index :Path {
   my ( $self, $c ) = @_;
 

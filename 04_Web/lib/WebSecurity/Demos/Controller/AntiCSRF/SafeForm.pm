@@ -2,6 +2,10 @@ package WebSecurity::Demos::Controller::AntiCSRF::SafeForm;
 
 use base 'Catalyst::Controller::HTML::FormFu';
 
+sub describe {
+  "CSRF Protection"
+}
+
 sub index :Local :FormConfig {
   my ( $self, $c ) = @_;
 

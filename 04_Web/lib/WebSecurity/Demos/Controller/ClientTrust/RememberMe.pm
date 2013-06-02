@@ -5,6 +5,10 @@ use MIME::Base64;
 
 BEGIN { extends 'WebSecurity::Demos::Controller::XSS::SessionHijack'; }
 
+sub describe {
+  "Remember me gone bad"
+}
+
 sub LoginRequired :Chained('/')  PathPrefix CaptureArgs(0) {
   my ( $self, $c ) = @_;
 

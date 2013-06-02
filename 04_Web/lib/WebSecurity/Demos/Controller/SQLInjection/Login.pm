@@ -4,6 +4,10 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+sub describe {
+  "Use SQL Injection to break login page"
+}
+
 # GET /
 sub index :GET Path Args(0) {
     my ( $self, $c ) = @_;

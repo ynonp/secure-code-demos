@@ -12,7 +12,7 @@ sub _build_proc {
 
   my $proc = Proc::Daemon->new(
     exec_command => 'node chat_server.js',
-    work_dir => '/Users/ynonperek/Courses/secure-code/WebSecurity-Demos/nodejs/',
+    work_dir => '/Users/ynonperek/Courses/secure-code/examples/secure-code-demos/04_Web/nodejs/',
   );
 
   my $ret = $proc->Init;
