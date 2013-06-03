@@ -24,7 +24,7 @@ requires 'Catalyst::Plugin::Session';
 requires 'Catalyst::Plugin::Session::Store::FastMmap';
 requires 'Catalyst::Plugin::Session::State::Cookie';
 
-requires 'DBD::Pq';
+requires 'DBD::Pg';
 
 requires 'Proc::Daemon';
 
