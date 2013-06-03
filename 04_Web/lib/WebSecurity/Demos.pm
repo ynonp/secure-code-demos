@@ -46,6 +46,9 @@ __PACKAGE__->config(
     enable_catalyst_header => 1, # Send X-Catalyst header
 );
 
+$SIG{INT}  = sub { exit(1) };
+$SIG{TERM} = sub { exit(1) };
+
 # Start the application
 __PACKAGE__->setup();
 

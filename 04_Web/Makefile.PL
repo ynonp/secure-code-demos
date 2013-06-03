@@ -28,6 +28,7 @@ requires 'DBD::Pg';
 requires 'Catalyst::View::TT';
 requires 'Bytes::Random::Secure';
 requires 'Proc::Daemon';
+requires 'Proc::ProcessTable';
 
 requires 'XML::XPath';
 
