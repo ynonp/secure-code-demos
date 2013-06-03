@@ -31,7 +31,7 @@ sub BUILD {
 
 sub DEMOLISH {
   my ( $self ) = @_;
-  $self->worker->Kill_Daemon;
+  $self->worker->Kill_Daemon if $self->worker;
 }
 
 __PACKAGE__->meta->make_immutable;
