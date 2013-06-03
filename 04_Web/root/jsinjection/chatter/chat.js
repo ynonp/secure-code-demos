@@ -5,7 +5,7 @@ var Chatter = function(nick) {
 
   self.nick = nick;
 
-  self.socket = io.connect('http://localhost:3100');
+  self.socket = io.connect('http://' + g_socketio_host);
 
   self.start_chat = function( $el ) {
     self.socket.on('userlist', function(userlist) {
