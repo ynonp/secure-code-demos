@@ -26,8 +26,7 @@ requires 'Catalyst::Plugin::Session::State::Cookie';
 
 requires 'DBD::Pg';
 requires 'Catalyst::View::TT';
-requires 'Catalyst::Controller::HTML::FormFu';
-
+requires 'Bytes::Random::Secure';
 requires 'Proc::Daemon';
 
 requires 'XML::XPath';
