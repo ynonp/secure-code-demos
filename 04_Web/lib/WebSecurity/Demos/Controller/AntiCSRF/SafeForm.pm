@@ -1,24 +1,24 @@
 package WebSecurity::Demos::Controller::AntiCSRF::SafeForm;
 
-use base 'Catalyst::Controller::HTML::FormFu';
+use base 'Catalyst::Controller';
+use Bytes::Random::Secure qw/random_bytes_hex/;
 
 sub describe {
   "CSRF Protection"
 }
 
-sub index :Local :FormConfig {
+sub index :Path :Args(0) :GET {
   my ( $self, $c ) = @_;
-
-  my $form = $c->stash->{form};
 
   $c->log->info("--- REQ ---");
 
-  if ( $form->submitted_and_valid ) {
-    $c->log->info("Submitted");
-    $c->response->body("1");
-  } else {
-    $c->log->info( $form );
-  }
+  $c->stash->{template} = 'anticsrf/safeform/index.tt';
+}
+
+sub do_form :Path :POST {
+  my ( $self, $c ) = @_;
+
+  $c->response->body('SUBMIT');
 }
 
 1;

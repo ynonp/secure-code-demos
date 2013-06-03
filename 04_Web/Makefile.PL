@@ -25,6 +25,8 @@ requires 'Catalyst::Plugin::Session::Store::FastMmap';
 requires 'Catalyst::Plugin::Session::State::Cookie';
 
 requires 'DBD::Pg';
+requires 'Catalyst::View::TT';
+requires 'Catalyst::Controller::HTML::FormFu';
 
 requires 'Proc::Daemon';
 
