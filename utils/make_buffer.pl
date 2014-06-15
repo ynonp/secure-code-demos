@@ -4,14 +4,22 @@ use autodie;
 use strict;
 use warnings;
 use POSIX qw/ceil/;
+use Getopt::Std;
 
 my $USAGE = "$0 <byte_as_hex_string> ... ";
 
 @ARGV > 0 or die $USAGE;
+my %opts;
+getopt('b:r:', \%opts);
 
-foreach my $h_byte (@ARGV) {
-  my $parsed = parse_byte_string( $h_byte );
-  print pack( "H16" , $parsed );
+my $byte_sz = $opts{b} || 8;
+my $repeat  = $opts{r} || 1;
+
+for ( 1..$repeat) {
+  foreach my $h_byte (@ARGV) {
+    my $parsed = parse_byte_string( $h_byte );
+    print pack( "H${byte_sz}" , $parsed );
+  }
 }
 
 sub parse_byte_string {

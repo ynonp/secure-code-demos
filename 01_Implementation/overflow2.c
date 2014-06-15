@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 
 int check_password()
 {
-  char password[16];
+  char password[64];
   gets(password);
 
-  return ! strncmp(password, "letmein", 16);
+  return ! strncmp(password, "letmein", 64);
 }
 
 int main( int argc, char **argv )
