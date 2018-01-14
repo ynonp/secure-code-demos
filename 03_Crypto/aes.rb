@@ -12,7 +12,7 @@ aead      = cipher.encrypt(nonce, 'authentication data', 'Hello')
 
 # aead[1] = 'f'
 
-plaintext = cipher.decrypt(nonce, 'authentication data', aead)
+# plaintext = cipher.decrypt(nonce, 'authentication data', aead)
 
-puts plaintext
+puts aead
 

@@ -10,10 +10,10 @@ int main(int argc, const char *argv[])
   MD5_Init(&c);
   MD5_Update(&c, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 64);
 
-  c.A = htonl(0x6036708e); /* <-- Current hash */
-  c.B = htonl(0xba0d11f6);
-  c.C = htonl(0xef52ad44);
-  c.D = htonl(0xe8b74d5b);
+  c.A = htonl(0xe1c9e47b); /* <-- Current hash */
+  c.B = htonl(0xe92b3585);
+  c.C = htonl(0x10029b76);
+  c.D = htonl(0xaea4c5e9);
 
   MD5_Update(&c, "wow", 3); /* Appended Data */
   MD5_Final(buffer, &c);
