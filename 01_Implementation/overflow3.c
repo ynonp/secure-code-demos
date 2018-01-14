@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 
 int check_password()
 {
   char password[132];
-  printf("stack at: 0x%llx\n", password);
+  printf("stack at: 0x%p\n", password);
 
   gets( password );
 

